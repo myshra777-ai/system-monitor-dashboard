@@ -19,6 +19,18 @@ Modular CLI dashboard for real-time system metrics, Docker container health, and
 - Color-coded terminal output
 - Cross-platform (Windows/Linux) compatibility
 
+Python · psutil · requests · docker SDK · colorama · argparse
+
+git clone https://github.com/myshra777-ai/system-monitor-dashboard.git
+cd system-monitor-dashboard
+pip install -r requirements.txt
+python src/main.py --all
+
+python src/main.py --metrics     # System stats only
+python src/main.py --docker      # Docker health only
+python src/main.py --weather     # Weather + time only
+python src/main.py --all         # Full dashboard
+
 ---
 
 ## 🚀 Setup
@@ -28,3 +40,4 @@ git clone https://github.com/myshra777-ai/system-monitor-dashboard.git
 cd system-monitor-dashboard
 pip install -r requirements.txt
 python src/main.py --all
+
