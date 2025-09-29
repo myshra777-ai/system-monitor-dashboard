@@ -1,31 +1,34 @@
-import sys
-import os
 import argparse
-
-# Ensure project root is in import path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-# Import your modules
-from modules.weather_time import get_weather, get_local_time
-from system_metrics import get_system_metrics
-from modules.docker_health import get_container_health
 from colorama import Fore, Style
+from modules.weather_time import get_local_time, get_weather
+from modules.system_metrics import get_system_metrics
+from modules.docker_health import get_container_health
 
 def show_weather_time():
-    print(Fore.CYAN + "\n🕒 Local Time:" + Style.RESET_ALL, get_local_time())
-    print(Fore.BLUE + "🌦 Weather:" + Style.RESET_ALL, get_weather())
+    print(Fore.CYAN + "\n=== Weather & Time ===" + Style.RESET_ALL)
+    print(Fore.YELLOW + "  Local Time:" + Style.RESET_ALL, get_local_time())
+    print(Fore.BLUE + "  Weather:" + Style.RESET_ALL, get_weather())
 
 def show_system_metrics():
     metrics = get_system_metrics()
-    print(Fore.GREEN + "\n📊 System Metrics:" + Style.RESET_ALL)
+    print(Fore.CYAN + "\n=== System Metrics ===" + Style.RESET_ALL)
     for key, value in metrics.items():
         print(f"  {key}: {value}")
 
 def show_docker_health():
     containers = get_container_health()
-    print(Fore.MAGENTA + "\n🐳 Docker Container Health Check:" + Style.RESET_ALL)
+    print(Fore.CYAN + "\n=== Docker Container Status ===" + Style.RESET_ALL)
     for info in containers:
-        print(f"  {info['Name']} ({info['Image']}): Status={info['Status']}, Health={info['Health']}")
+        status = info['Status']
+        health = info['Health']
+        if status == "running":
+            status_color = Fore.GREEN
+        elif status == "exited":
+            status_color = Fore.RED
+        else:
+            status_color = Fore.YELLOW
+
+        print(f"  {info['Name']} ({info['Image']}): Status={status_color}{status}{Style.RESET_ALL}, Health={health}")
 
 # CLI entry point
 if __name__ == "__main__":
