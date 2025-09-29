@@ -9,6 +9,9 @@ Modular system dashboard with real-time metrics, Docker health, uptime/load aver
 - Log aggregation and alerting
 - Modular CLI/GUI compatibility
 
+- ## GitHub Topics
+`devops` · `cli` · `docker` · `system-monitoring` · `python` · `dashboard` · `infrastructure`
+
 ## Setup
 ```bash
 git clone https://github.com/yourusername/system-monitor-dashboard.git
