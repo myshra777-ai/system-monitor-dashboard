@@ -8,7 +8,6 @@ Modular CLI dashboard for real-time system metrics, Docker container health, and
 
 ![Dashboard Demo](assets/dashboard_demo.png)  
 *Color-coded CLI output with system stats, weather, and Docker health*
-
 ---
 
 ## ⚙️ Features
