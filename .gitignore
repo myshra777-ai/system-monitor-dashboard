@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+.env
+logs/
+assets/screenshots/
+*.log
+*.sqlite3
