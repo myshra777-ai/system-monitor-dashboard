@@ -59,7 +59,7 @@ python src/main.py --all         # Full dashboard
 
 ## 📬 Contact
 
-Built by [Rohit](https://github.com/myshra777-ai) — Technical Support Specialist & EMR Workflow Analyst, transitioning into DevOps Engineer roles.  
-Let’s connect, collaborate, and build something impactful.
+Built by [Rohit](https://github.com/myshra777-ai) 
+
 
 ---
